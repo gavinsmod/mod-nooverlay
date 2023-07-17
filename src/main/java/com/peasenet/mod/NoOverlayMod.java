@@ -14,7 +14,7 @@ public class NoOverlayMod implements ModInitializer {
      */
     @Override
     public void onInitialize() {
-        LOGGER.info("Hello Fabric world!");
+        LOGGER.info("Initializing GEM NoOverlay...");
         GavinsMod.addMod(new ModNoOverlay());
     }
 }
