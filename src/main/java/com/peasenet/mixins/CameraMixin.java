@@ -21,7 +21,6 @@
 package com.peasenet.mixins;
 
 import com.peasenet.main.GavinsMod;
-import com.peasenet.mods.Type;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.CameraSubmersionType;
 import org.spongepowered.asm.mixin.Mixin;
@@ -33,7 +32,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class CameraMixin {
     @Inject(at = @At("HEAD"), method = "getSubmersionType", cancellable = true)
     public void getSubmersionType(CallbackInfoReturnable<CameraSubmersionType> cir) {
-        if (GavinsMod.isEnabled(Type.NO_OVERLAY)) cir.setReturnValue(CameraSubmersionType.NONE);
+        if (GavinsMod.isEnabled("nooverlay")) cir.setReturnValue(CameraSubmersionType.NONE);
     }
 }
 
